@@ -1,0 +1,32 @@
+﻿<html ng-app="app">
+
+<head>
+    <title>Image Viewer</title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="imageViewer/less/imageViewer.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+
+<body ng-controller="TestController">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" style="height: 750px;">
+                <panzoomwidget panzoom-id="PanZoom" style="position: absolute; top: 10px; left: 10px; z-index: 1"></panzoomwidget>
+                <ipg-image-viewer id="PanZoom" config="{ zoomLevels: 12, neutralZoomLevel: 5, scalePerZoomLevel: 1.5 }" model="{}" style="width: 800px; height: 600px">
+                    <img src="images/shark_attack.jpg" style="position: absolute" />
+                </ipg-image-viewer>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="bower_components/jQuery/dist/jquery.js"></script>
+<script src="bower_components/hamsterjs/hamster.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-mousewheel/mousewheel.js"></script>
+
+<script src="imageViewer/directives/panzoom.js"></script>
+<script src="imageViewer/services/PanZoomService.js"></script>
+<script src="imageViewer/directives/panzoomwidget.js"></script>
+<script src="app.js"></script>
+</html>
